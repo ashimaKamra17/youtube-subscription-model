@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AuthSession } from "@youtube-subscription-model/shared/src/auth";
+import { YouTubeSubscriptions } from "../components/YouTubeSubscriptions";
 
 interface UserInfo {
   id: string;
@@ -248,6 +249,8 @@ export const Dashboard: React.FC = () => {
             </InfoList>
           </Section>
         </Card>
+
+        <YouTubeSubscriptions />
       </ContentWrapper>
     </Container>
   );
