@@ -1,0 +1,25 @@
+{
+  "name": "youtube-subscription-model",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.24",
+    "prettier": "^3.2.5",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

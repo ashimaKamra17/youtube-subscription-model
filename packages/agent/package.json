@@ -1,0 +1,21 @@
+{
+  "name": "@youtube-subscription-model/agent",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --transpile-only ./src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@youtube-subscription-model/shared": "workspace:*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.24"
+  }
+}
