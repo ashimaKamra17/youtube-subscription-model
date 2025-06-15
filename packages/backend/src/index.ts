@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import session from 'express-session';
 import cors from 'cors';
 import authRoutes from './routes/auth.routes';
+import mcpRoutes from './routes/mcp';
 import { connectDB } from './db';
 import { fetchSubscribedChannels, fetchRecentVideos } from './services/youtubeService';
 import dotenv from 'dotenv';
@@ -45,6 +46,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/mcp', mcpRoutes);
 
 // Health check
 app.get('/health', (req: Request, res: Response) => {
