@@ -118,6 +118,7 @@ const ErrorMessage = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 `;
 
 const Button = styled.a`
@@ -226,31 +227,32 @@ export const Dashboard: React.FC = () => {
       <ContentWrapper>
         <Card>
           <UserHeader>
-            {userInfo.picture && (
-              <img src={userInfo.picture} alt={userInfo.displayName} />
+            {userInfo?.picture && (
+              <Avatar src={userInfo.picture} alt={userInfo.displayName} />
             )}
             <UserInfo>
-              <UserName>{userInfo.displayName}</UserName>
-              <UserEmail>{userInfo.email}</UserEmail>
+              <UserName>{userInfo?.displayName}</UserName>
+              <UserEmail>{userInfo?.email}</UserEmail>
             </UserInfo>
           </UserHeader>
 
           <Section>
-            <SectionTitle>Account Information</SectionTitle>
-            <InfoList>
-              <InfoItem>
-                <InfoLabel>User ID</InfoLabel>
-                <InfoValue>{userInfo.id}</InfoValue>
-              </InfoItem>
-              <InfoItem>
-                <InfoLabel>Email</InfoLabel>
-                <InfoValue>{userInfo.email}</InfoValue>
-              </InfoItem>
-            </InfoList>
+            <SectionTitle>Quick Actions</SectionTitle>
+            <ButtonGroup>
+              <Button href="/mcp-dashboard" className="primary">
+                View MCP Dashboard
+              </Button>
+              <Button href="/chat" className="secondary">
+                Chat with AI Assistant
+              </Button>
+            </ButtonGroup>
+          </Section>
+
+          <Section>
+            <SectionTitle>Your YouTube Subscriptions</SectionTitle>
+            <YouTubeSubscriptions />
           </Section>
         </Card>
-
-        <YouTubeSubscriptions />
       </ContentWrapper>
     </Container>
   );
